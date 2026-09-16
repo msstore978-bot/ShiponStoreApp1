@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Shipon Store Customer Management</string>
+    <string name="offline_test_title">Offline Database Test</string>
+
+    <string name="main_welcome">Shipon Store — Android Offline Foundation (V1)</string>
+    <string name="main_subtitle">Local Room database is ready. Existing Google Sheets / Apps Script backend is untouched in this step.</string>
+    <string name="btn_open_offline_test">Open Offline Database Test</string>
+
+    <string name="test_add_sample">Add Sample Customer</string>
+    <string name="test_search_hint">Search by name, shop, or phone</string>
+    <string name="test_no_results">No customers found locally yet. Try adding one above.</string>
+    <string name="test_delete">Delete</string>
+    <string name="test_update">Edit</string>
+    <string name="test_save">Save</string>
+    <string name="test_cancel">Cancel</string>
+    <string name="test_name_hint">Name</string>
+    <string name="test_shop_hint">Shop name</string>
+    <string name="test_phone_hint">Phone</string>
+    <string name="test_due_hint">Opening due</string>
+    <string name="test_status_offline">Network: OFF (airplane mode / no data) — this screen still works fully from local storage.</string>
+    <string name="test_status_online">Network: ON — still reading only from the local database (no sync in V1).</string>
+</resources>
