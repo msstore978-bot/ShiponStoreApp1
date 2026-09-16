@@ -1,5 +1,31 @@
 # Shipon Store Customer Management — Android V1 (Offline Foundation)
 
+## GitHub Actions APK build — fixed
+
+The earlier ZIP was missing `gradle/wrapper/gradle-wrapper.jar` (only
+`gradle-wrapper.properties` was present), which makes `./gradlew` fail
+immediately on any machine, including GitHub Actions, with an error like
+`Could not find or load main class org.gradle.wrapper.GradleWrapperMain`.
+There was also no `.github/workflows` file, so nothing was actually
+building on push.
+
+This version adds `.github/workflows/build-apk.yml`, which:
+1. Installs JDK 17 and Gradle 8.7 directly on the runner.
+2. Regenerates `gradle-wrapper.jar` before building, so a missing/corrupt
+   wrapper jar can never break the build again.
+3. Runs `./gradlew assembleDebug` and uploads the resulting APK as a
+   workflow artifact (Actions tab → the workflow run → Artifacts →
+   `app-debug-apk`).
+
+It also adds `.gitattributes` to force LF line endings on `gradlew`
+(a Windows checkout can otherwise silently turn it into a CRLF file,
+which also breaks the Linux build runner).
+
+To build locally in Android Studio, just open the project — Android
+Studio will regenerate the wrapper jar itself on first sync as long as
+you have an internet connection.
+
+
 ## 1. What was analyzed in your ZIP
 
 `Customer_Management_System.zip` contained:
