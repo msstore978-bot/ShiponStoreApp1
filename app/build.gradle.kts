@@ -46,6 +46,16 @@ android {
     }
 }
 
+// AppDatabase uses exportSchema = true, so Room needs a folder to export
+// the schema JSON to. Without this, some CI/Lint configurations turn the
+// "schema export directory is not provided" message into a build warning
+// that can be mistaken for a failure.
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
+}
+
 dependencies {
     // --- AndroidX core / UI ---
     implementation("androidx.core:core-ktx:1.13.1")
