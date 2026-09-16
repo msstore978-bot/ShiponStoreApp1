@@ -19,8 +19,7 @@ jobs:
 
     - name: Make gradlew executable
       run: chmod +x gradlew || true
-    - name: Generate Wrapper Jar if missing
-      run: gradle wrapper
+
     - name: Build with Gradle
       run: ./gradlew assembleDebug
 
